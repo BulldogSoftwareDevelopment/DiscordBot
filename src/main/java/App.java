@@ -4,12 +4,10 @@ import org.javacord.api.DiscordApiBuilder;
 
 public class App {
 
-    private static String token = "...";
-
     public static void main(String[] args) {
         Logger.LogWarning("%s", args);
         DiscordApi Client = new DiscordApiBuilder()
-                .setToken(token)
+                .setToken(System.getenv("DISCORD_BOT_TOKEN"))
                 .login()
                 .join();
 
